@@ -22,13 +22,3 @@ RUN apt-get install -qqy lxc-docker
 # Install the magic wrapper.
 ADD ./wrapdocker /etc/my_init.d/wrapdocker
 RUN chmod +x /etc/my_init.d/wrapdocker
-
-USER jenkins
-
-# Add jobs in children
-ONBUILD ADD ./jobs /var/jenkins_home/jobs
-
-# Add plugins in children
-ONBUILD ADD ./installplugins /etc/my_init.d/installplugins
-ONBUILD RUN chmod +x /etc/my_init.d/installplugins
-
