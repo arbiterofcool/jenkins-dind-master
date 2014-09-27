@@ -1,4 +1,5 @@
 jenkins:
+  command: java -jar -Dhudson.diyChunking=false /usr/share/jenkins/jenkins.war
   build: .
   volumes:
    - /var/lib/jenkins
