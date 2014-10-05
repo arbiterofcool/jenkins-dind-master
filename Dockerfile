@@ -10,7 +10,7 @@ RUN apt-get clean
 RUN apt-get update
 RUN apt-get -y upgrade
 
-RUN apt-get install -y curl openjdk-8-jdk unzip wget
+RUN apt-get install -y curl openjdk-7-jdk unzip wget
 
 RUN echo "deb http://pkg.jenkins-ci.org/debian binary/" > /etc/apt/sources.list.d/jenkins.list
 RUN wget -q -O - http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key | apt-key add -
