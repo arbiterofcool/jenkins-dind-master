@@ -1,4 +1,4 @@
-FROM java:8
+FROM phusion/baseimage:0.9.15
 MAINTAINER Sean Chatman <xpointsh@gmail.com>
 
 # Cleaning lists to make sure we have the most recent.
@@ -9,6 +9,8 @@ RUN rm -rf /var/lib/apt/lists/partial/*
 RUN apt-get clean
 RUN apt-get update
 RUN apt-get -y upgrade
+
+RUN apt-get install -y curl openjdk-8-jdk unzip wget
 
 RUN echo "deb http://pkg.jenkins-ci.org/debian binary/" > /etc/apt/sources.list.d/jenkins.list
 RUN wget -q -O - http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key | apt-key add -
